@@ -36,3 +36,43 @@ conda activate env
 ```bash
 pip install -r requirements.txt
 ```
+
+```bash
+# Finally run the following command
+python app.py
+```
+
+Now,
+```bash
+open up you local host and port
+```
+
+
+## MLflow
+
+- [Documentation](https://mlflow.org/docs/latest/index.html)
+
+
+##### cmd
+- mlflow ui
+
+
+### dagshub
+[dagshub](https://dagshub.com/)
+
+MLFLOW_TRACKING_URI=URI
+MLFLOW_TRACKING_USERNAME=USERNAME
+MLFLOW_TRACKING_PASSWORD=TOKEN
+python script.py
+
+Run this to export as env variables:
+
+```bash
+
+export MLFLOW_TRACKING_URI=URI
+
+export MLFLOW_TRACKING_USERNAME=USERNAME
+
+export MLFLOW_TRACKING_PASSWORD=TOKEN
+
+```
