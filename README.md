@@ -69,10 +69,10 @@ Run this to export as env variables:
 
 ```bash
 
-export MLFLOW_TRACKING_URI=URI
+export MLFLOW_TRACKING_URI=https://dagshub.com/pragyasharva/leukemia-detection.mlflow
 
-export MLFLOW_TRACKING_USERNAME=USERNAME
+export MLFLOW_TRACKING_USERNAME=pragyasharva
 
-export MLFLOW_TRACKING_PASSWORD=TOKEN
+export MLFLOW_TRACKING_PASSWORD=7072512c2294bd7b378427f2ba8b8f393315356b
 
 ```
