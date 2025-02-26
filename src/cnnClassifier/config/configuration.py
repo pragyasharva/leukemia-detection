@@ -82,7 +82,7 @@ class ConfigurationManager:
 
     def get_evaluation_config(self) -> EvaluationConfig:
         eval_config = EvaluationConfig(
-            path_of_model="artifacts/training/model",
+            path_of_model="artifacts/training/model.keras",
             training_data="artifacts/data_ingestion/Blood cell Cancer [ALL]",
             mlflow_uri="https://dagshub.com/pragyasharva/leukemia-detection.mlflow",
             all_params=self.params,
