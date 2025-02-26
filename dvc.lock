@@ -44,3 +44,71 @@ stages:
       md5: 0feecbea52c55c0340466c882ea8d905.dir
       size: 89735501
       nfiles: 2
+  training:
+    cmd: python src/cnnClassifier/pipeline/stage_03_model_training.py
+    deps:
+    - path: artifacts/data_ingestion/Blood cell Cancer [ALL]
+      hash: md5
+      md5: 47dd86bee6aaedf80b90943ef1c40302.dir
+      size: 1807890919
+      nfiles: 3242
+    - path: artifacts/prepare_base_model
+      hash: md5
+      md5: 0feecbea52c55c0340466c882ea8d905.dir
+      size: 89735501
+      nfiles: 2
+    - path: config/config.yaml
+      hash: md5
+      md5: 72c73b78fe2b505fad2c302105f0a297
+      size: 573
+    - path: src/cnnClassifier/pipeline/stage_03_model_training.py
+      hash: md5
+      md5: 96dd0aa82b6f95b10a68c22cacf2ff64
+      size: 893
+    params:
+      params.yaml:
+        AUGMENTATION: true
+        BATCH_SIZE: 16
+        EPOCHS: 25
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: artifacts/training
+      hash: md5
+      md5: a7810dbcd01231b2e9b7007ac484df1f.dir
+      size: 132651746
+      nfiles: 1
+  evaluation:
+    cmd: python src/cnnClassifier/pipeline/stage_04_model_evaluation.py
+    deps:
+    - path: artifacts/data_ingestion/Blood cell Cancer [ALL]
+      hash: md5
+      md5: 47dd86bee6aaedf80b90943ef1c40302.dir
+      size: 1807890919
+      nfiles: 3242
+    - path: artifacts/training/model.keras
+      hash: md5
+      md5: d40cbdacda8334c32faebf66a0f60737
+      size: 132651746
+    - path: config/config.yaml
+      hash: md5
+      md5: 72c73b78fe2b505fad2c302105f0a297
+      size: 573
+    - path: src/cnnClassifier/pipeline/stage_04_model_evaluation.py
+      hash: md5
+      md5: ff3b04dc1d1eb8229f7b270684541ead
+      size: 884
+    params:
+      params.yaml:
+        BATCH_SIZE: 16
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: scores.json
+      hash: md5
+      md5: 4bc968667c377874989b2af72d2dace6
+      size: 71
