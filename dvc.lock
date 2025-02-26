@@ -5,12 +5,12 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 55ba9a850fba990d8be912dc5d018e6d
+      md5: 72c73b78fe2b505fad2c302105f0a297
       size: 573
     - path: src/cnnClassifier/pipeline/stage_01_data_ingestion.py
       hash: md5
-      md5: caf501a7205ba64b6d4426666570432c
-      size: 908
+      md5: 80bf4498f65a358cb425ddbbb2f8683a
+      size: 880
     outs:
     - path: artifacts/data_ingestion/Blood cell Cancer [ALL]
       hash: md5
@@ -22,12 +22,12 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 55ba9a850fba990d8be912dc5d018e6d
+      md5: 72c73b78fe2b505fad2c302105f0a297
       size: 573
     - path: src/cnnClassifier/pipeline/stage_02_prepare_base_model.py
       hash: md5
-      md5: a6e96ec27ad9e851a2cb29b752073bed
-      size: 999
+      md5: 42387011620baff3ceddef0a75a30146
+      size: 969
     params:
       params.yaml:
         CLASSES: 4
@@ -41,6 +41,6 @@ stages:
     outs:
     - path: artifacts/prepare_base_model
       hash: md5
-      md5: eb926cdc9908b90f9d1cd84ca3948526.dir
-      size: 101877969
-      nfiles: 10
+      md5: 0feecbea52c55c0340466c882ea8d905.dir
+      size: 89735501
+      nfiles: 2

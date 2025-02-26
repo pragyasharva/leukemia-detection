@@ -45,7 +45,7 @@ stages:
       - src/cnnClassifier/pipeline/stage_04_model_evaluation.py
       - config/config.yaml
       - artifacts/data_ingestion/Blood cell Cancer [ALL]
-      - artifacts/training/model
+      - artifacts/training/model.keras
     params:
       - IMAGE_SIZE
       - BATCH_SIZE
