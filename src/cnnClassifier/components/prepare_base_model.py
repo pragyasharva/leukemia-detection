@@ -37,7 +37,7 @@ class PrepareBaseModel:
 
 
         # Save the model in TensorFlow format (SavedModel)
-        self.model.save(self.config.base_model_path, save_format='tf')  # Save in TensorFlow format
+        self.model.save(self.config.base_model_path)  # Save in TensorFlow format
 
 
 
@@ -83,9 +83,7 @@ class PrepareBaseModel:
         )
 
         # Save the model in TensorFlow SavedModel format
-        self.full_model.save(self.config.updated_base_model_path, save_format='tf')
-
-
+        self.full_model.save(self.config.updated_base_model_path)
 
     
         
