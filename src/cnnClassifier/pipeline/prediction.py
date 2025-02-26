@@ -13,7 +13,7 @@ class PredictionPipeline:
         
         
     def predict(self):
-        self.model = tf.saved_model.load("C:/Users/Pragyasharava/Desktop/leukemia-detection/artifacts/training/model")
+        self.model = load_model("artifacts/training/model.keras")
         # Directly load the image
         test_image = image.load_img(self.filename, target_size=(224, 224))
         test_image = image.img_to_array(test_image) / 255.0  # Normalize pixel values to [0, 1]
@@ -31,6 +31,6 @@ class PredictionPipeline:
         predicted_class = np.argmax(result.numpy(), axis=1)
 
         # Define class labels
-        class_labels = ['[Malignant] early Pre-B', '[Malignant] Pre-B', '[Malignant] Pro-B', 'Benign']
+        class_labels = ['Benign', '[Malignant] Pre-B', '[Malignant] Pro-B', '[Malignant] early Pre-B']
         prediction = class_labels[predicted_class[0]]  # Map to class label
         return [{"image": prediction}]
