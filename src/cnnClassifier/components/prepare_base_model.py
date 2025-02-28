@@ -18,10 +18,10 @@ class PrepareBaseModel:
         # Ensure image_size is a list
         image_size = list(self.config.params_image_size)
 
-        # Ensure weights is a string and not an EagerTensor
+
         weights = self.config.params_weights
         if isinstance(weights, tf.Tensor):
-            weights = weights.numpy().decode('utf-8')  # Convert tensor to string if needed
+            weights = weights.numpy().decode('utf-8')  
 
         # Print the values to verify
         print("Image Size:", image_size)
@@ -30,14 +30,14 @@ class PrepareBaseModel:
         # Create the model
         self.model = tf.keras.applications.EfficientNetB3(
             input_shape=image_size,
-            weights=weights,  # 'imagenet' or the correct string
+            weights=weights,  
             include_top=self.config.params_include_top
         )
 
 
 
-        # Save the model in TensorFlow format (SavedModel)
-        self.model.save(self.config.base_model_path)  # Save in TensorFlow format
+        # Save the model 
+        self.model.save(self.config.base_model_path) 
 
 
 

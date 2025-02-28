@@ -66,9 +66,6 @@ class Evaluation:
             if tracking_url_type_store != "file":
 
                 # Register the model
-                # There are other ways to use the Model Registry, which depends on the use case,
-                # please refer to the doc for more information:
-                # https://mlflow.org/docs/latest/model-registry.html#api-workflow
                 mlflow.tensorflow.log_model(self.model, "model", registered_model_name="efficientnet_b3_model")
             else:
                 mlflow.tensorflow.log_model(self.model, "model")        

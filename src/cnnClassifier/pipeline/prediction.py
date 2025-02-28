@@ -9,17 +9,14 @@ import os
 class PredictionPipeline:
     def __init__(self, filename):
         self.filename = filename
-        # Load the model from the SavedModel path
         
         
     def predict(self):
         self.model = load_model("artifacts/training/model.keras")
-        # Directly load the image
         test_image = image.load_img(self.filename, target_size=(224, 224))
         test_image = image.img_to_array(test_image) / 255.0  # Normalize pixel values to [0, 1]
         test_image = np.expand_dims(test_image, axis=0)  # Add batch dimension
         
-        # Call the model directly
         result = self.model(test_image)  # Direct call to the model
         
         print("Raw model output:", result)
